@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>DVD Search</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>DVD Search</h2>
+        <div class="row" style="">
+            <div class="col-xs-3">
+                <form action="/dvds" method="get">
+                    <div class="form-group">
+                        <label for="titleInput">Title:</label>
+                        <input type="text" name="title" class="form-control" id="titleInput">
+                    </div>
+                    <div class="form-group">
+                        <label for="awardSelect">Award:</label>
+                        <select class="form-control" id="awardSelect" name="award">
+                            <option value="">-- Select --</option>
+                            <% awards.forEach(function(award) { %>
+                                <option value="<%= award %>"><%= award %></option>
+                            <% }); %>
+                        </select>
+                    </div>
+                    <input type="submit" class="form-control">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
